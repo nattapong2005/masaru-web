@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Kanit";
+  src: url("./font/Kanit-Regular.ttf");
+}
+
+* {
+  font-family: "Kanit";
+}
+body {
+  background-color: #010B13;
+}
