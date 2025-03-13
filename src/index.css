@@ -1,12 +1,12 @@
 @import "tailwindcss";
 
 @font-face {
-  font-family: "Kanit";
-  src: url("./font/Kanit-Regular.ttf");
+  font-family: "PrachasonNeue";
+  src: url("./font/PrachasonNeue-Regular.otf");
 }
 
 * {
-  font-family: "Kanit";
+  font-family: "PrachasonNeue";
 }
 body {
   background-color: #010B13;
