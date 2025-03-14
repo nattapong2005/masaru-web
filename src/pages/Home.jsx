@@ -2,34 +2,46 @@ import React from "react";
 import Layout from "./../components/Layout";
 import * as LucideIcons from "lucide-react";
 import services from "../data/utils.json";
+import { useInView } from "react-intersection-observer";
+import CountUp from "react-countup";
 
 const Home = () => {
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.5,
+  });
+
   return (
     <Layout>
       {/* Hero Section -------------------------------------------------------------------------------------------------- */}
-      <section className="container flex  items-center justify-center mx-auto md:px-12 mt-20 lg:mt-0 ">
-        <div className="mb-14 lg:mb-0 lg:w-1/2">
-          <h1 className="max-w-xl text-[2.9rem] leading-none text-white font-extrabold font-sans text-center lg:text-5xl lg:text-left lg:leading-tight ">
-            MASARU MARKETING
-          </h1>
-          <p className="text-2xl text-center text-white lg:text-left lg:max-w-md">Digital Marketing E-commerce</p>
-          <p className="text-2xl text-center text-white lg:text-left lg:max-w-md">และคลังสินค้าฟูลฟิวเม้นท์ครบวงจร</p>
-          <div className="flex justify-center mt-2 lg:justify-start">
-            <button className="flex gap-2 items-center cursor-pointer bg-[#D93327] hover:bg-red-500 transition px-10 py-3 rounded-lg  text-white mt-4 shadow-lg text-lg">
+      <section
+        className="relative flex items-center  bg-cover bg-center h-screen "
+        style={{ backgroundImage: "url('./img/home/header-bg.jpg')" }}
+      >
+        {/* เบลอเฉพาะแทบซ้าย (Responsive) */}
+        <div className="absolute top-0 left-0 h-full w-full sm:w-1/2 md:w-[600px] lg:w-[880px] backdrop-blur-xs bg-white/10"></div>
+
+        {/* คอนเทนต์ด้านซ้าย */}
+        <div className="relative z-10 mb-14 lg:mb-0 w-full sm:w-3/4 lg:w-1/2 text-white text-center sm:text-left px-4 md:px-32">
+          <h1 className="max-w-xl text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight drop-shadow-lg">MASARU MARKETING</h1>
+          <p className="text-xl sm:text-2xl mt-2 lg:max-w-md drop-shadow-lg">Digital Marketing E-commerce</p>
+          <p className="text-xl sm:text-2xl lg:max-w-md drop-shadow-lg">และคลังสินค้าฟูลฟิลเมนต์ครบวงจร</p>
+
+          {/* ปุ่ม CTA */}
+          <div className="flex justify-center sm:justify-start mt-6">
+            <button className="flex items-center gap-2 cursor-pointer bg-[#D93327] hover:bg-red-500 transition px-8 sm:px-10 py-3 rounded-lg text-white text-lg shadow-lg focus:outline-none focus:ring-4 focus:ring-red-300">
               <LucideIcons.BookOpenText /> อ่านเพิ่มเติม
             </button>
           </div>
         </div>
-        <div className="hidden lg:flex lg:w-1/2 ">
-          <img src="./img/home/1.png" />
-        </div>
       </section>
+
       {/* Hero Section -------------------------------------------------------------------------------------------------- */}
 
       {/* Info -------------------------------------------------------------------------------------------------- */}
       <section className="container mx-auto p-10 mb-20 mt-0 lg:mt-16">
         <div className="flex flex-wrap sm:flex-nowrap items-center justify-between gap-5">
-          <div className="w-full sm:w-1/2">
+          <div className="w-full sm:w-[555px]">
             <img className="rounded-xl" src="./img/home/info.jpg" alt="" />
           </div>
           <div className=" max-w-xl text-center sm:text-left">
@@ -87,18 +99,13 @@ const Home = () => {
       {/* Register  -------------------------------------------------------------------------------------------------- */}
 
       {/* Why us  -------------------------------------------------------------------------------------------------- */}
-      <section className="container mx-auto mt-10 sm:mt-10 md:mt-10 lg:mt-40 mb-5">
-        <h1 className="text-white text-2xl sm:text-4xl font-bold text-center">
-          ทำไมต้องเลือก <span className="text-[#D93327] ">MASARU</span>
-        </h1>
-        <div className="flex justify-center px-5 sm:px-0">
-          <div className="flex flex-col justify-center">
-            <p className="text-white text-lg mt-2 px-3 sm:px-0">
-              MASARU คือผู้เชี่ยวชาญด้านการตลาดและสื่อสารออนไลน์ครบวงจร เราช่วยให้ธุรกิจของคุณเติบโตได้อย่างมั่นคง
-            </p>
-            <div className="flex justify-center">
-              <div className="flex flex-col gap-y-2 mt-7">
-                <h1 className="text-white flex gap-2 text-lg">
+      <section className="container mx-auto p-10 mb-20 mt-0 lg:mt-16">
+        <div className="flex flex-wrap sm:flex-nowrap items-center justify-between gap-5">
+        <div className=" max-w-xl text-center sm:text-left">
+            <h1 className="text-3xl sm:text-4xl text-white font-black mb-2">ทำไมต้องเลือก <span className="text-[#D93327] font-bold">MASARU</span></h1>
+            <p className="text-white">MASARU คือผู้เชี่ยวชาญด้านการตลาดและสื่อสารออนไลน์ครบวงจร เราช่วยให้ธุรกิจของคุณเติบโตได้อย่างมั่นคง</p>
+            <div className="flex flex-col gap-y-2 mt-7">
+                <h1 className="text-white flex gap-2 text-lg ">
                   <LucideIcons.CircleCheckBig size={30} className="text-[#D93327]" /> ผลิตสื่อคอนเทนต์ดึงดูดลูกค้า
                 </h1>
                 <h1 className="text-white flex gap-2 text-lg">
@@ -117,11 +124,47 @@ const Home = () => {
                   <LucideIcons.Shield size={30} className="text-[#D93327]" /> พาร์ทเนอร์ด้านการตลาดที่คุณวางใจ
                 </h1>
               </div>
+          </div>
+          <div className="w-full sm:w-[555px]">
+            <img className="rounded-xl" src="./img/home/whyus.jpg" alt="" />
+          </div>
+
+        </div>
+      </section>
+      {/* Why us -------------------------------------------------------------------------------------------------- */}
+
+      {/* Count Up  -------------------------------------------------------------------------------------------------- */}
+      <section ref={ref} className="border-2 border-[#D93327] py-20 text-center mt-10 sm:mt-10 md:mt-10 lg:mt-40">
+        <div className="flex justify-center">
+          <div className=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-36 gap-y-10 ">
+            <div className="text-center">
+              <h1 className="text-4xl lg:text-5xl font-bold text-red-600">
+                {inView ? <CountUp start={0} end={45} duration={1.5} suffix="+" /> : "0"}
+              </h1>
+              <p className="text-lg text-white">โครงการที่สำเร็จ</p>
+            </div>
+            <div className="text-center">
+              <h1 className="text-4xl lg:text-5xl font-bold text-red-600">
+                {inView ? <CountUp start={0} end={20} duration={1.5} suffix="%" /> : "0"}
+              </h1>
+              <p className="text-lg text-white">การเติบโต</p>
+            </div>
+            <div className="text-center">
+              <h1 className="text-4xl lg:text-5xl font-bold text-red-600">
+                {inView ? <CountUp start={0} end={90} duration={1.5} suffix="%" /> : "0"}
+              </h1>
+              <p className="text-lg text-white">ความสุขพนักงาน</p>
+            </div>
+            <div className="text-center">
+              <h1 className="text-4xl lg:text-5xl font-bold text-red-600">
+                {inView ? <CountUp start={0} end={30} duration={1.5} suffix="+" /> : "0"}
+              </h1>
+              <p className="text-lg text-white">หลักสูตรต่อปี</p>
             </div>
           </div>
         </div>
       </section>
-      {/* Why us  -------------------------------------------------------------------------------------------------- */}
+      {/* Count Up  -------------------------------------------------------------------------------------------------- */}
 
       {/* Join Us -------------------------------------------------------------------------------------------------- */}
       <section className="container mx-auto mt-10 sm:mt-10 md:mt-10 lg:mt-40">
@@ -135,7 +178,7 @@ const Home = () => {
           </div>
         </div>
         <div className="flex justify-center">
-          <button className="flex gap-2 items-center cursor-pointer bg-[#D93327] hover:bg-red-500 transition px-10 py-3 rounded-lg  text-white mt-4 shadow-lg text-lg">
+          <button className="flex gap-2 items-center cursor-pointer bg-[#D93327] hover:bg-red-500 transition px-8 py-2.5 rounded-lg  text-white mt-4 shadow-lg text-lg">
             <LucideIcons.PencilLine /> สมัครงาน
           </button>
         </div>

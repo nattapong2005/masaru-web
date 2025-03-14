@@ -1,42 +1,64 @@
 import React from "react";
-import * as LucideIcons from "lucide-react";
+import {  Mail, Phone, MapPin } from "lucide-react";
 
 const Footer = () => {
   return (
-    <div className="p-6 sm:p-10 md:p-16 mt-16 text-white">
-      <div className="flex flex-col sm:flex-row sm:justify-between items-start sm:items-center gap-10">
-        <div className="flex flex-col text-sm sm:text-lg md:text-lg">
-          <h1 className="font-bold text-xl">MASARU MARKETING</h1>
-          <h1>Digital Marketing, E-commerce และคลังสินค้าฟูลฟิวเม้นทครบวงจร</h1>
-        </div>
-        <div className="flex flex-col text-sm sm:text-lg md:text-lg">
-          <h1 className="font-bold text-xl">เมนู</h1>
-          <div className="mt-2">
-            <div>- หน้าหลัก</div>
-            <div>- เกี่ยวกับ</div>
-            <div>- ติดต่อเรา</div>
+    <footer className="w-full py-8 mt-20">
+      <div className="container mx-auto px-4">
+        <div className="flex flex-col md:flex-row justify-between items-start gap-8">
+          <div className="w-full md:w-1/3">
+            <div className="flex items-center mb-4">
+              <img src="./img/logo.png" alt="MASARU MARKETING Logo" className="h-20 mr-3" />
+            </div>
+            <p className="text-white mb-4">Digital Marketing, E-commerce และคลังสินค้าฟูลฟิวเม้นทครบวงจร</p>
+          </div>
+          <div className="w-full md:w-1/4">
+            <h4 className="text-lg font-semibold mb-4 text-white">เมนู</h4>
+            <ul className="space-y-2">
+              <li>
+                <a href="#" className="text-white hover:text-[#D93327]">
+                  หน้าหลัก
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-white hover:text-[#D93327]">
+                  เกี่ยวกับ
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-white hover:text-[#D93327]">
+                  ติดต่อเรา
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div className="w-full md:w-1/3">
+            <h4 className="text-lg font-semibold mb-4 text-white">ช่องทางการติดต่อ</h4>
+            <div className="space-y-3">
+              <div className="flex items-start">
+                <Phone size={18} className="mr-2 mt-1 text-white" />
+                <span className="text-white">092-765-9777</span>
+              </div>
+              <div className="flex items-start">
+                <Mail size={18} className="mr-2 mt-1 text-white" />
+                <span className="text-white">hr.official.ganes@gmail.com</span>
+              </div>
+              <div className="flex items-start">
+                <MapPin size={18} className="mr-2 mt-1 text-white" />
+                <span className="text-white">475/4-5 ถ.ทหารบก ตำบลบ่อพลับ อำเภอเมืองนครปฐม จังหวัดนครปฐม 73000</span>
+              </div>
+            </div>
           </div>
         </div>
-        <div className="flex flex-col text-sm sm:text-lg md:text-lg">
-          <h1 className="font-bold">ช่องทางการติดต่อ</h1>
-          <img
-            className="w-1/2 sm:w-1/4 cursor-pointer"
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGPyRgrNmdWW5YWaengnNR9i1OPTgQlmu2SA&s"
-            alt="contact"
-          />
+        <hr className="text-white mb-10 mt-10" />
+        <div className=" mt-8 pt-6">
+          <div className="flex flex-col md:flex-row justify-center items-center">
+            <p className="text-white text-md mb-4 md:mb-0">© {new Date().getFullYear()} MASARU MARKETING. All rights reserved.</p>
+          </div>
         </div>
       </div>
-
-      <div className="container mx-auto">
-        <hr className="mt-10 mb-10" />
-      </div>
-
-      <div className="flex justify-center items-center text-sm sm:text-lg md:text-lg lg:text-lg gap-2">
-        <p className="flex gap-2 font-bold">
-          <LucideIcons.Copyright /> Copyright 2025 Masaru Marketing All Rights Reserved
-        </p>
-      </div>
-    </div>
+    </footer>
   );
 };
 
