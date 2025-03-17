@@ -40,15 +40,16 @@ const Home = () => {
 
       {/* Info -------------------------------------------------------------------------------------------------- */}
       <section className="container mx-auto p-10 mb-20 mt-0 lg:mt-16">
-        <div className="flex flex-wrap sm:flex-nowrap items-center justify-between gap-5">
+        <div className="flex flex-wrap sm:flex-nowrap items-center justify-center gap-10">
           <div className="w-full sm:w-[555px]">
             <img className="rounded-xl" src="./img/home/info.jpg" alt="" />
           </div>
           <div className=" max-w-xl text-center sm:text-left">
             <h1 className="text-3xl sm:text-4xl text-white font-black mb-2">Masaru Digital Marketing</h1>
-            <p className="text-lg sm:text-xl text-white">
-              บริษัทประกอบกิจการเกี่ยวกับ E-commerce และคลังสินค้าฟูลฟิวเม้นท์ รวมถึงทำธุรกิจในรูปแบบ Digital Marketing บนแพลตฟอร์มออนไลน์
-              เช่น Facebook Lazada Shopee JD Central และ Tiktok
+            <p className="text-lg sm:text-lg text-white">
+              บริษัทประกอบกิจการเกี่ยวกับ E-commerce และคลังสินค้าฟูลฟิวเม้นท์ <br></br>รวมถึงทำธุรกิจในรูปแบบ Digital Marketing
+              บนแพลตฟอร์มออนไลน์
+              <br></br>เช่น Facebook Lazada Shopee JD Central และ Tiktok
             </p>
           </div>
         </div>
@@ -100,35 +101,39 @@ const Home = () => {
 
       {/* Why us  -------------------------------------------------------------------------------------------------- */}
       <section className="container mx-auto p-10 mb-20 mt-0 lg:mt-16">
-        <div className="flex flex-wrap sm:flex-nowrap items-center justify-between gap-5">
-        <div className=" max-w-xl text-center sm:text-left">
-            <h1 className="text-3xl sm:text-4xl text-white font-black mb-2">ทำไมต้องเลือก <span className="text-[#D93327] font-bold">MASARU</span></h1>
-            <p className="text-white">MASARU คือผู้เชี่ยวชาญด้านการตลาดและสื่อสารออนไลน์ครบวงจร เราช่วยให้ธุรกิจของคุณเติบโตได้อย่างมั่นคง</p>
-            <div className="flex flex-col gap-y-2 mt-7">
-                <h1 className="text-white flex gap-2 text-lg ">
-                  <LucideIcons.CircleCheckBig size={30} className="text-[#D93327]" /> ผลิตสื่อคอนเทนต์ดึงดูดลูกค้า
-                </h1>
-                <h1 className="text-white flex gap-2 text-lg">
-                  <LucideIcons.ShoppingCart size={30} className="text-[#D93327]" /> วางกลยุทธ์ E-commerce อย่างมืออาชีพ
-                </h1>
-                <h1 className="text-white flex gap-2 text-lg">
-                  <LucideIcons.Palette size={30} className="text-[#D93327]" /> ออกแบบกราฟิกให้โดดเด่น
-                </h1>
-                <h1 className="text-white flex gap-2 text-lg">
-                  <LucideIcons.Megaphone size={30} className="text-[#D93327]" /> การตลาดโซเชียลมีเดียครบวงจร
-                </h1>
-                <h1 className="text-white flex gap-2 text-lg">
-                  <LucideIcons.Store size={30} className="text-[#D93327]" /> ดูแลร้านค้าออนไลน์ Shopee / Lazada / Titok
-                </h1>
-                <h1 className="text-white flex gap-2 text-lg">
-                  <LucideIcons.Shield size={30} className="text-[#D93327]" /> พาร์ทเนอร์ด้านการตลาดที่คุณวางใจ
-                </h1>
-              </div>
-          </div>
+        <div className="flex flex-wrap  sm:flex-nowrap items-center justify-center gap-10">
           <div className="w-full sm:w-[555px]">
             <img className="rounded-xl" src="./img/home/whyus.jpg" alt="" />
           </div>
-
+          <div className=" max-w-xl text-center sm:text-left">
+            <h1 className="text-3xl sm:text-4xl text-white font-black mb-2">
+              ทำไมต้องเลือก <span className="text-[#D93327] font-bold">MASARU</span>
+            </h1>
+            <p className="text-white">
+              MASARU คือผู้เชี่ยวชาญด้านการตลาดและสื่อสารออนไลน์ครบวงจร <br />
+              เราช่วยให้ธุรกิจของคุณเติบโตได้อย่างมั่นคง
+            </p>
+            <div className="flex flex-col gap-y-2 mt-7">
+              <h1 className="text-white flex gap-2 text-lg ">
+                <LucideIcons.CircleCheckBig size={30} className="text-[#D93327]" /> ผลิตสื่อคอนเทนต์ดึงดูดลูกค้า
+              </h1>
+              <h1 className="text-white flex gap-2 text-lg">
+                <LucideIcons.ShoppingCart size={30} className="text-[#D93327]" /> วางกลยุทธ์ E-commerce อย่างมืออาชีพ
+              </h1>
+              <h1 className="text-white flex gap-2 text-lg">
+                <LucideIcons.Palette size={30} className="text-[#D93327]" /> ออกแบบกราฟิกให้โดดเด่น
+              </h1>
+              <h1 className="text-white flex gap-2 text-lg">
+                <LucideIcons.Megaphone size={30} className="text-[#D93327]" /> การตลาดโซเชียลมีเดียครบวงจร
+              </h1>
+              <h1 className="text-white flex gap-2 text-lg">
+                <LucideIcons.Store size={30} className="text-[#D93327]" /> ดูแลร้านค้าออนไลน์ Shopee / Lazada / Titok
+              </h1>
+              <h1 className="text-white flex gap-2 text-lg">
+                <LucideIcons.Shield size={30} className="text-[#D93327]" /> พาร์ทเนอร์ด้านการตลาดที่คุณวางใจ
+              </h1>
+            </div>
+          </div>
         </div>
       </section>
       {/* Why us -------------------------------------------------------------------------------------------------- */}
@@ -171,7 +176,7 @@ const Home = () => {
         <h1 className="text-2xl sm:text-4xl text-white font-bold text-center">ร่วมงานกับเรา</h1>
         <div className="flex justify-center">
           <div className="flex flex-col justify-center">
-            <p className="max-w-md sm:max-w-2xl text-lg text-white mt-2 mb-2 px-5 sm:px-0">
+            <p className="max-w-md sm:max-w-3xl text-lg text-white mt-2 mb-2 px-5 sm:px-0">
               เป็นส่วนหนึ่งของทีมที่มุ่งมั่นในการพัฒนาผลิตภัณฑ์และบริการที่ตอบโจทย์ลูกค้า เราให้ความสำคัญกับการพัฒนาศักยภาพของพนักงานทุกคน
               มีโอกาสเรียนรู้และเติบโตในสายอาชีพที่คุณรัก พร้อมด้วยสวัสดิการที่ครบครัน
             </p>
