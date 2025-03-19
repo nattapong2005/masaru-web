@@ -5,14 +5,24 @@ import Home from './pages/Home';
 import NotFound from './pages/NotFound';
 import About from './pages/About';
 import Test from './pages/Test';
+import Contact from './pages/Contact';
+import AOS from 'aos';
+import "aos/dist/aos.css";
+
 
 const App = () => {
+
+  useEffect(() => {
+    AOS.init();
+  },[])
+
   return (
     <>
     <Router>
       <Routes>
         <Route path='/' element={<Home/>} />
         <Route path='/about' element={<About/>} />
+        <Route path='/contact' element={<Contact/>} />
         <Route path='/test' element={<Test/>} />
         <Route path='*' element={<NotFound/>}/>
       </Routes>

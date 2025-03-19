@@ -29,7 +29,7 @@ const Home = () => {
 
           {/* ปุ่ม CTA */}
           <div className="flex justify-center sm:justify-start mt-6">
-            <button className="flex items-center gap-2 cursor-pointer bg-[#D93327] hover:bg-red-500 transition px-8 sm:px-10 py-3 rounded-lg text-white text-lg shadow-lg focus:outline-none focus:ring-4 focus:ring-red-300">
+            <button className="flex items-center gap-2 cursor-pointer bg-[#D93327] hover:bg-red-500 transition px-8 sm:px-10 py-3 rounded-full text-white text-lg shadow-lg focus:outline-none focus:ring-4 focus:ring-red-300">
               <LucideIcons.BookOpenText /> อ่านเพิ่มเติม
             </button>
           </div>
@@ -41,11 +41,11 @@ const Home = () => {
       {/* Info -------------------------------------------------------------------------------------------------- */}
       <section className="container mx-auto p-10 mb-20 mt-0 lg:mt-16">
         <div className="flex flex-wrap sm:flex-nowrap items-center justify-center gap-10">
-          <div className="w-full sm:w-[555px]">
+          <div data-aos="fade-up" data-aos-delay="50" className="w-full sm:w-[555px]">
             <img className="rounded-xl" src="./img/home/info.jpg" alt="" />
           </div>
-          <div className=" max-w-xl text-center sm:text-left">
-            <h1 className="text-3xl sm:text-4xl text-white font-black mb-2">Masaru Digital Marketing</h1>
+          <div data-aos="fade-up" data-aos-delay="150" className="max-w-xl text-center sm:text-left">
+            <h1 className="text-3xl sm:text-4xl text-white font-black mb-2">Masaru Marketing</h1>
             <p className="text-lg sm:text-lg text-white">
               บริษัทประกอบกิจการเกี่ยวกับ E-commerce และคลังสินค้าฟูลฟิวเม้นท์ <br></br>รวมถึงทำธุรกิจในรูปแบบ Digital Marketing
               บนแพลตฟอร์มออนไลน์
@@ -59,7 +59,7 @@ const Home = () => {
       {/* Our Service -------------------------------------------------------------------------------------------------- */}
       <section className="container mx-auto">
         <div className="flex justify-center">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 p-5">
+          <div data-aos="fade-up" data-aos-delay="500" data-aos-duration="500" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 p-5">
             {services.services.map((s, index) => {
               const IconComponent = LucideIcons[s.icon];
               return (
@@ -87,12 +87,12 @@ const Home = () => {
 
       {/* Register  -------------------------------------------------------------------------------------------------- */}
       <section className="bg-[url('./img/home/test.jpg')] bg-cover bg-center py-32 mb-10 mt-10 sm:mt-10 md:mt-10 lg:mt-40">
-        <h1 className="text-black text-2xl sm:text-3xl lg:text-4xl font-bold text-center">พร้อมที่จะเติบโตธุรกิจของคุณหรือยัง</h1>
-        <div className="flex flex-col justify-center items-center mt-2">
+        <h1 data-aos="zoom-in" data-aos-delay="200" className="text-black text-2xl sm:text-3xl lg:text-4xl font-bold text-center">พร้อมที่จะเติบโตธุรกิจของคุณหรือยัง</h1>
+        <div data-aos="zoom-in" data-aos-delay="200" className="flex flex-col justify-center items-center mt-2">
           <h2 className="max-w-xl text-md sm:text-lg px-5 sm:px-0">
             ติดต่อเราวันนี้เพื่อคำแนะนำจากผู้เชี่ยวชาญด้าน E-commerce และ Digital Marketing หรือเรียนรู้วิธีการขยายธุรกิจของคุณทางออนไลน์
           </h2>
-          <button className="mt-7 flex gap-2 text-white py-2.5 px-8 rounded-lg bg-[#D93327] cursor-pointer hover:bg-red-600">
+          <button className="mt-7 flex gap-2 text-white py-2.5 px-8 rounded-full bg-[#D93327] cursor-pointer hover:bg-red-600">
             <LucideIcons.Headset /> ติดต่อเรา
           </button>
         </div>
@@ -102,10 +102,10 @@ const Home = () => {
       {/* Why us  -------------------------------------------------------------------------------------------------- */}
       <section className="container mx-auto p-10 mb-20 mt-0 lg:mt-16">
         <div className="flex flex-wrap  sm:flex-nowrap items-center justify-center gap-10">
-          <div className="w-full sm:w-[555px]">
+          <div data-aos="fade-down" className="w-full sm:w-[555px]">
             <img className="rounded-xl" src="./img/home/whyus.jpg" alt="" />
           </div>
-          <div className=" max-w-xl text-center sm:text-left">
+          <div data-aos="fade-up" className=" max-w-xl text-center sm:text-left">
             <h1 className="text-3xl sm:text-4xl text-white font-black mb-2">
               ทำไมต้องเลือก <span className="text-[#D93327] font-bold">MASARU</span>
             </h1>
@@ -140,7 +140,7 @@ const Home = () => {
 
       {/* Count Up  -------------------------------------------------------------------------------------------------- */}
       <section ref={ref} className="border-2 border-[#D93327] py-20 text-center mt-10 sm:mt-10 md:mt-10 lg:mt-40">
-        <div className="flex justify-center">
+        <div  className="flex justify-center">
           <div className=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-36 gap-y-10 ">
             <div className="text-center">
               <h1 className="text-4xl lg:text-5xl font-bold text-red-600">
@@ -172,7 +172,7 @@ const Home = () => {
       {/* Count Up  -------------------------------------------------------------------------------------------------- */}
 
       {/* Join Us -------------------------------------------------------------------------------------------------- */}
-      <section className="container mx-auto mt-10 sm:mt-10 md:mt-10 lg:mt-40">
+      <section data-aos="fade-down" data-aos-duration="2000" className="container mx-auto mt-10 sm:mt-10 md:mt-10 lg:mt-40">
         <h1 className="text-2xl sm:text-4xl text-white font-bold text-center">ร่วมงานกับเรา</h1>
         <div className="flex justify-center">
           <div className="flex flex-col justify-center">
@@ -183,7 +183,7 @@ const Home = () => {
           </div>
         </div>
         <div className="flex justify-center">
-          <button className="flex gap-2 items-center cursor-pointer bg-[#D93327] hover:bg-red-500 transition px-8 py-2.5 rounded-lg  text-white mt-4 shadow-lg text-lg">
+          <button className="flex gap-2 items-center cursor-pointer bg-[#D93327] hover:bg-red-500 transition px-8 py-2.5 rounded-full  text-white mt-4 shadow-lg text-lg">
             <LucideIcons.PencilLine /> สมัครงาน
           </button>
         </div>

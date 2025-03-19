@@ -4,9 +4,16 @@
   font-family: "PrachasonNeue";
   src: url("./font/PrachasonNeue-Regular.otf");
 }
-
+@font-face {
+  font-family: "PrachasonNeue-Light";
+  src: url("./font/PrachasonNeue-Light.otf");
+}
+p , span{
+  font-family: "PrachasonNeue-Light";
+}
 * {
   font-family: "PrachasonNeue";
+  scroll-behavior: smooth;
 }
 body {
   background-color: #010B13;
