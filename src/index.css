@@ -8,7 +8,12 @@
   font-family: "PrachasonNeue-Light";
   src: url("./font/PrachasonNeue-Light.otf");
 }
-p , span{
+
+@font-face {
+  font-family: "PrachasonNeue-Black";
+  src: url("./font/PrachasonNeue-Black.otf");
+}
+p {
   font-family: "PrachasonNeue-Light";
 }
 * {

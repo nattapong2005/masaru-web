@@ -38,12 +38,12 @@ const Contact = () => {
       {/* Hero Section -----------------------------------------------------------------------------------------------*/}
 
      {/* Form -----------------------------------------------------------------------------------------------*/}
-      <section data-aos="fade-up" data-aos-duration="1000"  className="container mx-auto mt-10 mb-10">
+      <section data-aos="fade-up" data-aos-delay="50"  className="container mx-auto mt-10 mb-10">
         <div className="flex flex-col lg:flex-row gap-6 lg:gap-10">
           <div className="flex-1 p-5 sm:p-0">
             <div className="flex items-center gap-2 mb-5">
               <div className="bg-[#D93327] w-fit p-2.5 rounded-full">
-                <LucideIcons.MapPin className="text-white" size={40} />
+                <LucideIcons.MapPin className="text-white" size={30} />
               </div>
               <div className="flex flex-col">
                 <h1 className="text-white text-xl font-bold">Address</h1>
@@ -52,7 +52,7 @@ const Contact = () => {
             </div>
             <div className="flex items-center gap-2 mb-5">
               <div className="bg-[#D93327] w-fit p-2.5 rounded-full">
-                <LucideIcons.Phone className="text-white" size={40} />
+                <LucideIcons.Phone className="text-white" size={30} />
               </div>
               <div className="flex flex-col">
                 <h1 className="text-white text-xl font-bold">โทร</h1>
@@ -61,7 +61,7 @@ const Contact = () => {
             </div>
             <div className="flex items-center gap-2 mb-5">
               <div className="bg-[#D93327] w-fit p-2.5 rounded-full">
-                <LucideIcons.Mail className="text-white" size={40} />
+                <LucideIcons.Mail className="text-white" size={30} />
               </div>
               <div className="flex flex-col">
                 <h1 className="text-white text-xl font-bold">อีเมล</h1>
@@ -73,7 +73,7 @@ const Contact = () => {
             <form onSubmit={handleSubmit} className="flex flex-col gap-5">
               <div className="mb-5">
                 <label className="block text-white text-lg font-medium mb-2" htmlFor="name">
-                  ชื่อ
+                  ชื่อ-นามสกุล
                 </label>
                 <input
                   type="text"
@@ -133,18 +133,18 @@ const Contact = () => {
 
 
      {/* Google Map -----------------------------------------------------------------------------------------------*/}
-      <section data-aos="fade-down" data-aos-duration="500"  className="container mx-auto mt-20 mb-10">
+      <section data-aos="fade-up" data-aos-delay="50"  className="container mx-auto mt-20 mb-10">
         <h1 className="text-white text-4xl font-bold text-center">Google Map</h1>
         <div className="mt-5 mb-10 p-5">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3874.1999764747934!2d100.067987!3d13.827027300000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e2e542f6f1f83f%3A0x8085b5c44fa33ffb!2sMasaru%20Marketing%20Co.%2CLtd.!5e0!3m2!1sth!2sth!4v1742351562345!5m2!1sth!2sth"
             width="100%"
             height="600"
-            style={{ border: "0" }}
             allowFullScreen=""
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
             title="Google Map"
+            className="rounded-xl"
           />
         </div>
       </section>
