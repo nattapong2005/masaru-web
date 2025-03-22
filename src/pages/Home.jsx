@@ -35,7 +35,7 @@ const Home = () => {
             <button className="flex items-center gap-2 cursor-pointer bg-[#D93327] hover:bg-red-500 transition px-8 sm:px-10 py-3 rounded-full text-white text-lg shadow-lg">
               <LucideIcons.BookOpenText /> อ่านเพิ่มเติม
             </button>
-            <NavLink to={"/contact"} className="flex items-center gap-2 cursor-pointer border-2 hover:border-gray-800 hover:bg-gray-800 transition px-8 sm:px-10 py-3 rounded-full text-white text-lg shadow-lg">
+            <NavLink to={"/contact"} className="flex items-center gap-2 cursor-pointer border-2 hover:border-black hover:bg-black transition px-8 sm:px-10 py-3 rounded-full text-white text-lg shadow-lg">
               <LucideIcons.Phone /> ติดต่อเรา
             </NavLink>
           </div>
@@ -71,7 +71,7 @@ const Home = () => {
               return (
                 <div
                   key={index}
-                  className="group relative max-w-md sm:max-w-xs p-10 rounded-lg border-2 cursor-pointer border-red-700 hover:shadow-lg transform transition-all duration-300 "
+                  className="group relative max-w-md sm:max-w-xs p-10 rounded-lg border-2 cursor-pointer border-red-700 shadow-lg shadow-red-800 transform transition-all duration-300"
                 >
                   <div className="absolute bottom-0 left-0 w-full h-0 bg-gradient-to-t from-[#D93327] to-transparent transition-all duration-500 group-hover:h-full z-0"></div>
                   <div className="relative z-10">
