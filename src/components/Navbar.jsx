@@ -7,6 +7,7 @@ const Navbar = () => {
     {path: "/", text: "หน้าหลัก"},
     {path: "/about", text: "เกี่ยวกับ"},
     {path: "/contact", text: "ติดต่อเรา"},
+    {path: "/apply", text: "ร่วมงานกับเรา"},
   ]
 
   return (

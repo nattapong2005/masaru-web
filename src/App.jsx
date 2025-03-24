@@ -8,6 +8,7 @@ import Test from "./pages/Test";
 import Contact from "./pages/Contact";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import Apply from './pages/Apply';
 
 const App = () => {
   useEffect(() => {
@@ -21,7 +22,7 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/test" element={<Test />} />
+          <Route path="/apply" element={<Apply />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Router>

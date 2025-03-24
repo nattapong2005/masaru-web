@@ -1,59 +1,77 @@
-import React from "react";
+import { useState } from "react";
 import * as LucideIcons from "lucide-react";
+import welfareData from "../data/utils.json";
 
-const Test = () => {
+// Structured data with categories
+
+const Category = ({ category, index, toggleCategory, isExpanded }) => {
+  const IconComponent = LucideIcons[category.icon];
   return (
-    <div>
-      <section className="container mx-auto px-4 py-10 lg:py-20">
-        <div className="flex flex-col md:flex-row md:gap-8 lg:gap-12 items-center">
-          {/* Image container - full width on mobile, responsive on larger screens */}
-          <div className="w-full md:w-5/12 mb-8 md:mb-0">
-            <img src="./img/home/whyus.jpg" className="w-full max-w-md mx-auto rounded-lg shadow-lg" alt="MASARU" />
+    <div className="border border-white/10 rounded-lg overflow-hidden">
+      <button
+        className={`w-full flex items-center justify-between px-4 py-3 text-left transition-colors cursor-pointer ${
+          isExpanded ? "bg-[#D93327]/20" : "bg-white/5 hover:bg-white/10"
+        }`}
+        onClick={() => toggleCategory(index)}
+      >
+        <div className="flex items-center gap-3">
+          <div className="shrink-0 flex items-center justify-center w-12 h-12 rounded-full bg-[#D93327]/10">
+            {/* <Icon className="text-[#D93327]" size={24} /> */}
+            {IconComponent && <IconComponent className="text-[#D93327]" size={24} />}
           </div>
-
-          {/* Content container - full width on mobile, responsive on larger screens */}
-          <div className="w-full md:w-7/12">
-            <div className="flex flex-col gap-y-4">
-              <h1 className="text-white text-2xl sm:text-3xl lg:text-4xl font-bold text-center md:text-left">
-                ทำไมต้องเลือก <span className="text-[#D93327]">MASARU</span>
-              </h1>
-              <p className="text-white text-base lg:text-lg mt-2">
-                MASARU คือผู้เชี่ยวชาญด้านการตลาดและสื่อสารออนไลน์ครบวงจร เราช่วยให้ธุรกิจของคุณเติบโตได้อย่างมั่นคง
-              </p>
-              
-              {/* Features list */}
-              <div className="mt-4 space-y-3">
-                <div className="text-white flex items-center gap-2 text-base lg:text-lg">
-                  <LucideIcons.CircleCheckBig size={24} className="text-[#D93327] flex-shrink-0" /> 
-                  <span>ผลิตสื่อคอนเทนต์ดึงดูดลูกค้า</span>
-                </div>
-                <div className="text-white flex items-center gap-2 text-base lg:text-lg">
-                  <LucideIcons.ShoppingCart size={24} className="text-[#D93327] flex-shrink-0" /> 
-                  <span>วางกลยุทธ์ E-commerce อย่างมืออาชีพ</span>
-                </div>
-                <div className="text-white flex items-center gap-2 text-base lg:text-lg">
-                  <LucideIcons.Palette size={24} className="text-[#D93327] flex-shrink-0" /> 
-                  <span>ออกแบบกราฟิกให้โดดเด่น</span>
-                </div>
-                <div className="text-white flex items-center gap-2 text-base lg:text-lg">
-                  <LucideIcons.Megaphone size={24} className="text-[#D93327] flex-shrink-0" /> 
-                  <span>การตลาดโซเชียลมีเดียครบวงจร</span>
-                </div>
-                <div className="text-white flex items-center gap-2 text-base lg:text-lg">
-                  <LucideIcons.Store size={24} className="text-[#D93327] flex-shrink-0" /> 
-                  <span>ดูแลร้านค้าออนไลน์ Shopee / Lazada / Titok</span>
-                </div>
-                <div className="text-white flex items-center gap-2 text-base lg:text-lg">
-                  <LucideIcons.Shield size={24} className="text-[#D93327] flex-shrink-0" /> 
-                  <span>พาร์ทเนอร์ด้านการตลาดที่คุณวางใจ</span>
-                </div>
-              </div>
-            </div>
-          </div>
+          <h2 className="font-medium text-white">{category.name}</h2>
         </div>
-      </section>
+        {isExpanded ? (
+          <LucideIcons.ChevronUp className="h-5 w-5 text-[#D93327]" />
+        ) : (
+          <LucideIcons.ChevronDown className="h-5 w-5 text-gray-400" />
+        )}
+      </button>
+
+      {isExpanded && (
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-0 p-4 bg-white/5">
+          {category.items.map((item, idx) => (
+            <CategoryItem key={idx} item={item} />
+          ))}
+        </div>
+      )}
     </div>
   );
 };
 
-export default Test;
+const CategoryItem = ({ item }) => (
+  <div className="py-2 px-2">
+    <div className="flex items-center gap-2">
+      <div className="w-1 h-1 rounded-full bg-[#D93327]" />
+      <div>
+        <span className="text-sm font-medium text-white">{item.name}</span>
+        {item.description && <span className="text-xs text-gray-400 ml-2">({item.description})</span>}
+      </div>
+    </div>
+  </div>
+);
+
+export default function Test() {
+  const [expandedCategory, setExpandedCategory] = useState(null);
+
+  const toggleCategory = (index) => {
+    setExpandedCategory(expandedCategory === index ? null : index);
+  };
+
+  return (
+    <section className="container mx-auto py-12 px-4">
+      <div className="max-w-4xl mx-auto">
+        <h1 className="text-center font-bold text-2xl sm:text-3xl md:text-4xl mb-10 text-white">
+          สวัสดิการสำหรับพนักงาน <span className="text-[#D93327]">MASARU</span>
+        </h1>
+
+        <div className="space-y-4">
+          {welfareData.categories.map((category, index) => {
+            const isExpanded = expandedCategory === index;
+            return <Category key={index} category={category} index={index} toggleCategory={toggleCategory} isExpanded={isExpanded} />;
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}
