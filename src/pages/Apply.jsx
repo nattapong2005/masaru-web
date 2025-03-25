@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import Layout from "../components/Layout";
 import * as LucideIcons from "lucide-react";
-import welfare from "../data/utils.json";
+import welfareData from "../data/utils.json";
 import axios from "axios";
-import Test from "./Test";
+import { useNavigate } from "react-router-dom";
 
 const Apply = () => {
   const [formData, setFormData] = useState({ name: "", email: "", message: "", file: null });
-
+  const navigate = useNavigate();
   const handleChange = (e) => {
     const { name, value, files } = e.target;
     setFormData((prevData) => ({
@@ -16,9 +16,62 @@ const Apply = () => {
     }));
   };
 
+  const Category = ({ category, index, toggleCategory, isExpanded }) => {
+    const IconComponent = LucideIcons[category.icon];
+    return (
+      <div className="border border-white/10 rounded-lg overflow-hidden">
+        <button
+          className={`w-full flex items-center justify-between px-4 py-3 text-left transition-colors cursor-pointer ${
+            isExpanded ? "bg-[#D93327]/20" : "bg-white/5 hover:bg-white/10"
+          }`}
+          onClick={() => toggleCategory(index)}
+        >
+          <div className="flex items-center gap-3">
+            <div className="shrink-0 flex items-center justify-center w-12 h-12 rounded-full bg-[#D93327]/10">
+              {/* <Icon className="text-[#D93327]" size={24} /> */}
+              {IconComponent && <IconComponent className="text-[#D93327]" size={24} />}
+            </div>
+            <h2 className="font-medium text-white">{category.name}</h2>
+          </div>
+          {isExpanded ? (
+            <LucideIcons.ChevronUp className="h-5 w-5 text-[#D93327]" />
+          ) : (
+            <LucideIcons.ChevronDown className="h-5 w-5 text-gray-400" />
+          )}
+        </button>
+
+        {isExpanded && (
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-0 p-4 bg-white/5">
+            {category.items.map((item, idx) => (
+              <CategoryItem key={idx} item={item} />
+            ))}
+          </div>
+        )}
+      </div>
+    );
+  };
+  const CategoryItem = ({ item }) => (
+    <div className="py-2 px-2">
+      <div className="flex items-center gap-2">
+        <div className="w-1 h-1 rounded-full bg-[#D93327]" />
+        <div>
+          <span className="text-sm font-medium text-white">{item.name}</span>
+          {item.description && <span className="text-xs text-gray-400 ml-2">({item.description})</span>}
+        </div>
+      </div>
+    </div>
+  );
+
+  const [expandedCategory, setExpandedCategory] = useState(null);
+
+  const toggleCategory = (index) => {
+    setExpandedCategory(expandedCategory === index ? null : index);
+  };
+
   const handleSubmit = async (e) => {
-    // e.preventDefault();
+    e.preventDefault();
     alert("ส่งข้อมูลเรียบร้อย");
+    navigate("/");
     const form = new FormData();
     form.append("name", formData.name);
     form.append("email", formData.email);
@@ -35,8 +88,6 @@ const Apply = () => {
           },
         }
       );
-
-
     } catch (error) {
       console.log(error.message);
     }
@@ -57,12 +108,13 @@ const Apply = () => {
                 เราใส่ใจในการพัฒนาและยกระดับคุณภาพชีวิตของบุคลากร <br></br> พร้อมสร้างสภาพแวดล้อมที่เต็มไปด้วยโอกาส และความท้าทาย
                 <br></br>เพื่อให้ทุกคนเติบโตไปพร้อมกับธุรกิจ ที่ขับเคลื่อนด้วยนวัตกรรมและความร่วมมือ
               </p>
-              <button
-                className="text-white px-6 py-3 rounded-full cursor-pointer font-semibold hover:opacity-90 transition flex gap-2"
+              <a
+                href="#apply"
+                className="text-white px-6 w-fit py-3 rounded-full cursor-pointer font-semibold hover:opacity-90 transition flex gap-2"
                 style={{ backgroundColor: "#D93327" }}
               >
-                <LucideIcons.ChevronRight/> สมัครตอนนี้
-              </button>
+                <LucideIcons.ClipboardPlus /> สมัครตอนนี้
+              </a>
             </div>
           </div>
         </div>
@@ -71,61 +123,64 @@ const Apply = () => {
       {/* Hero Section -------------------------------------------------------------------------------------------------- */}
 
       {/* Welfare section -------------------------------------------------------------------------------------------------- */}
-     <Test/>
-      {/* Welfare section -------------------------------------------------------------------------------------------------- */}
+      <section className="container mx-auto py-12 px-4">
+        <div className="max-w-4xl mx-auto">
+          <h1 data-aos="fade-up" data-aos-delay="50" className="text-center font-bold text-2xl sm:text-3xl md:text-4xl mb-10 text-white">
+            สวัสดิการสำหรับพนักงาน <span className="text-[#D93327]">MASARU</span>
+          </h1>
 
-      <section>
-        <h1 className="text-white text-2xl sm:text-3xl md:text-4xl font-bold text-center mt-10 ">สมัครร่วมทีมกับเรา</h1>
-        <div className=" px-4 py-8 flex justify-center items-center">
-          <form className="p-10 rounded-xl w-full max-w-4xl shadow-lg bg-black" method="POST" action="" onSubmit={handleSubmit}>
-            <div className="mb-4">
-              <label htmlFor="name" className="block text-white text-lg mb-2">
-                ชื่อ
-              </label>
-              <input
-                id="name"
-                name="name"
-                type="text"
-                onChange={handleChange}
-                placeholder="กรุณากรอกชื่อ"
-                className="w-full p-3 border border-gray-300 rounded-lg bg-white text-black focus:outline-none focus:ring-2 focus:ring-blue-500"
-              />
-            </div>
-
-            <div className="mb-4">
-              <label htmlFor="email" className="block text-white text-lg mb-2">
-                อีเมล
-              </label>
-              <input
-                id="email"
-                name="email"
-                type="email"
-                onChange={handleChange}
-                placeholder="กรุณากรอกอีเมล"
-                className="w-full p-3 border border-gray-300 rounded-lg bg-white text-black focus:outline-none focus:ring-2 focus:ring-blue-500"
-              />
-            </div>
-            <div className="mb-4">
-              <label htmlFor="message" className="block text-white text-lg mb-2">
-                ช่องทางการติดต่อ
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                onChange={handleChange}
-                placeholder="กรุณากรอกช่องทางการติดต่อ"
-                className="w-full p-3 border border-gray-300 rounded-lg bg-white text-black focus:outline-none focus:ring-2 focus:ring-blue-500"
-              />
-            </div>
-            <button
-              type="submit"
-              className="w-full bg-[#D93327] text-white px-4 py-3 rounded-full hover:bg-red-700  transition duration-300"
-            >
-              ส่งใบสมัคร
-            </button>
-          </form>
+          <div data-aos="fade-up" data-aos-delay="50" className="space-y-4">
+            {welfareData.categories.map((category, index) => {
+              const isExpanded = expandedCategory === index;
+              return <Category key={index} category={category} index={index} toggleCategory={toggleCategory} isExpanded={isExpanded} />;
+            })}
+          </div>
         </div>
       </section>
+      {/* Welfare section -------------------------------------------------------------------------------------------------- */}
+
+      {/* Apply step section -------------------------------------------------------------------------------------------------- */}
+      <section  data-aos="fade-up" data-aos-delay="50" className="w-full mt-10 mb-10">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-8">
+            <h2 className="text-4xl font-bold text-white">ขั้นตอนการสมัครงาน</h2>
+            <p className="mt-2 text-white mb-16">ทำความเข้าใจกระบวนการสมัครงานของเราได้ง่ายๆ ด้วย 3 ขั้นตอนต่อไปนี้</p>
+          </div>
+
+          <div className="mt-8 grid grid-cols-1 gap-8 md:grid-cols-3">
+            <div className="flex flex-col items-center text-center sm:text-left">
+              <div className="relative mb-4 flex w-full justify-center">
+                <div className="flex h-14 w-14 items-center justify-center rounded-full border-2 border-primary bg-primary text-red-500">
+                  <LucideIcons.FileText className="h-6 w-6" />
+                </div>
+                <div className="absolute top-1/2 left-[calc(50%+35px)] h-[2px] w-[calc(50%-35px)] hidden md:block bg-muted-foreground/30" />
+              </div>
+              <h3 className="text-lg font-medium text-white">กรอกใบสมัคร</h3>
+              <p className="mt-1 text-sm text-gray-400">กรอกข้อมูลส่วนตัว และทักษะความสามารถให้ครบถ้วน</p>
+            </div>
+            <div className="flex flex-col items-center text-center sm:text-left">
+              <div className="relative mb-4 flex w-full justify-center">
+                <div className="flex h-14 w-14 items-center justify-center rounded-full border-2 border-muted-foreground/30 text-red-500">
+                  <LucideIcons.Send className="h-6 w-6" />
+                </div>
+                <div className="absolute top-1/2 left-[calc(50%+35px)] h-[2px] w-[calc(50%-35px)] hidden md:block bg-muted-foreground/30" />
+              </div>
+              <h3 className="text-lg font-medium text-white">ส่งใบสมัครและรอการตอบกลับ</h3>
+              <p className="mt-1 text-sm text-gray-400">ตรวจสอบข้อมูลให้ถูกต้อง กดส่งใบสมัคร และรอทีมงานของเราตรวจสอบคุณสมบัติ</p>
+            </div>
+            <div className="flex flex-col items-center text-center sm:text-left">
+              <div className="relative mb-4 flex w-full justify-center">
+                <div className="flex h-14 w-14 items-center justify-center rounded-full border-2 border-muted-foreground/30 text-red-500">
+                  <LucideIcons.MessageSquare className="h-6 w-6" />
+                </div>
+              </div>
+              <h3 className="text-lg font-medium text-white">สัมภาษณ์และประกาศผล</h3>
+              <p className="mt-1 text-sm text-gray-400">หากผ่านการคัดกรอง คุณจะได้รับการติดต่อเพื่อนัดสัมภาษณ์</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* Apply step section -------------------------------------------------------------------------------------------------- */}
     </Layout>
   );
 };

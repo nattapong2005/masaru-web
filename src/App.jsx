@@ -9,6 +9,7 @@ import Contact from "./pages/Contact";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Apply from './pages/Apply';
+import FixTop from './FixTop';
 
 const App = () => {
   useEffect(() => {
@@ -18,6 +19,7 @@ const App = () => {
   return (
     <>
       <Router>
+        <FixTop/>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />

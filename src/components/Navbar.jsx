@@ -6,8 +6,8 @@ const Navbar = () => {
   const navItems = [
     {path: "/", text: "หน้าหลัก"},
     {path: "/about", text: "เกี่ยวกับ"},
-    {path: "/contact", text: "ติดต่อเรา"},
     {path: "/apply", text: "ร่วมงานกับเรา"},
+    {path: "/contact", text: "ติดต่อเรา"},
   ]
 
   return (

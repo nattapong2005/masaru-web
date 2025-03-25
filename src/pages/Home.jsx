@@ -100,9 +100,9 @@ const Home = () => {
           <h2 className="max-w-xl text-center text-md sm:text-lg px-5 sm:px-0">
             ติดต่อเราวันนี้เพื่อคำแนะนำจากผู้เชี่ยวชาญด้าน E-commerce และ Digital Marketing หรือเรียนรู้วิธีการขยายธุรกิจของคุณทางออนไลน์
           </h2>
-          <button className="mt-7 flex gap-2 text-white py-2.5 px-8 rounded-full bg-[#D93327] cursor-pointer hover:bg-red-600">
+          <NavLink to={"/contact"} className="mt-7 flex gap-2 text-white py-2.5 px-8 rounded-full bg-[#D93327] cursor-pointer hover:bg-red-600">
             <LucideIcons.Headset /> ติดต่อเรา
-          </button>
+          </NavLink>
         </div>
       </section>
       {/* Register  -------------------------------------------------------------------------------------------------- */}
@@ -191,9 +191,9 @@ const Home = () => {
           </div>
         </div>
         <div className="flex justify-center">
-          <button className="flex gap-2 items-center cursor-pointer bg-[#D93327] hover:bg-red-500 transition px-8 py-2.5 rounded-full  text-white mt-4 shadow-lg text-lg">
+          <NavLink to={"/apply"} className="flex gap-2 items-center cursor-pointer bg-[#D93327] hover:bg-red-500 transition px-8 py-2.5 rounded-full  text-white mt-4 shadow-lg text-lg">
             <LucideIcons.PencilLine /> สมัครงาน
-          </button>
+          </NavLink>
         </div>
       </section>
       {/* Join Us -------------------------------------------------------------------------------------------------- */}
