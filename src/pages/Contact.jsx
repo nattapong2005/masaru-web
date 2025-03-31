@@ -121,7 +121,7 @@ const Contact = () => {
 
               <button
                 type="submit"
-                className="bg-[#D93327] text-white py-3 px-6 rounded-full hover:bg-red-600 transition duration-300 cursor-pointer"
+                className="bg-[#D93327] text-white py-3 px-6 rounded-lg hover:bg-red-600 transition duration-300 cursor-pointer"
               >
                 ส่งข้อความ
               </button>

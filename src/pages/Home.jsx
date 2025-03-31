@@ -32,11 +32,11 @@ const Home = () => {
 
           {/* ปุ่ม CTA */}
           <div className="flex justify-center sm:justify-start mt-6 gap-2">
-            <button className="flex items-center gap-2 cursor-pointer bg-[#D93327] hover:bg-red-500 transition px-8 sm:px-10 py-3 rounded-full text-white text-lg shadow-lg">
-              <LucideIcons.BookOpenText /> อ่านเพิ่มเติม
-            </button>
-            <NavLink to={"/contact"} className="flex items-center gap-2 cursor-pointer border-2 hover:border-black hover:bg-black transition px-8 sm:px-10 py-3 rounded-full text-white text-lg shadow-lg">
-              <LucideIcons.Phone /> ติดต่อเรา
+            <a className="flex items-center gap-2 cursor-pointer bg-[#D93327] hover:bg-red-500 transition px-3 py-2  rounded-lg text-white text-md shadow-lg">
+              <LucideIcons.BookOpenText size={20} /> อ่านเพิ่มเติม
+            </a>
+            <NavLink to={"/contact"} className="flex items-center gap-2 cursor-pointer border-2 hover:border-white hover:bg-white hover:text-black transition px-4 py-2 rounded-lg text-white text-sm shadow-lg">
+              <LucideIcons.Phone size={20} /> ติดต่อเรา
             </NavLink>
           </div>
         </div>
@@ -71,7 +71,7 @@ const Home = () => {
               return (
                 <div
                   key={index}
-                  className="group relative max-w-md sm:max-w-xs p-10 rounded-lg border-2 cursor-pointer border-red-700 shadow-lg shadow-red-800 transform transition-all duration-300"
+                  className="group relative max-w-md sm:max-w-xs p-10 rounded-lg border-2 cursor-pointer border-red-700 bg-[#D93327]/20 shadow-red-800 transform transition-all duration-300"
                 >
                   <div className="absolute bottom-0 left-0 w-full h-0 bg-gradient-to-t from-[#D93327] to-transparent transition-all duration-500 group-hover:h-full z-0"></div>
                   <div className="relative z-10">
@@ -92,15 +92,15 @@ const Home = () => {
       {/* Our Service -------------------------------------------------------------------------------------------------- */}
 
       {/* Register  -------------------------------------------------------------------------------------------------- */}
-      <section className="bg-[url('./img/home/test.jpg')] bg-cover bg-center py-32 mb-10 mt-10 sm:mt-10 md:mt-10 lg:mt-40">
-        <h1 data-aos="fade-up" data-aos-delay="50" className="text-black text-2xl sm:text-3xl lg:text-4xl font-extrabold text-center">
+      <section className="bg-gradient-to-r from-red-500 via-red-800 to-red-900 py-32 mb-10 mt-10 sm:mt-10 md:mt-10 lg:mt-40 ">
+        <h1 data-aos="fade-up" data-aos-delay="50" className="text-white text-2xl sm:text-3xl lg:text-4xl font-extrabold text-center">
           พร้อมที่จะเติบโตธุรกิจของคุณหรือยัง
         </h1>
         <div data-aos="fade-up" data-aos-delay="50" className="flex flex-col justify-center items-center mt-2">
-          <h2 className="max-w-xl text-center text-md sm:text-lg px-5 sm:px-0">
+          <h2 className="max-w-xl text-center text-md sm:text-lg px-5 sm:px-0 text-white">
             ติดต่อเราวันนี้เพื่อคำแนะนำจากผู้เชี่ยวชาญด้าน E-commerce และ Digital Marketing หรือเรียนรู้วิธีการขยายธุรกิจของคุณทางออนไลน์
           </h2>
-          <NavLink to={"/contact"} className="mt-7 flex gap-2 text-white py-2.5 px-8 rounded-full bg-[#D93327] cursor-pointer hover:bg-red-600">
+          <NavLink to={"/contact"} className="mt-7 flex gap-2 text-white py-2.5 px-8 rounded-lg bg-black cursor-pointer hover:bg-red-600">
             <LucideIcons.Headset /> ติดต่อเรา
           </NavLink>
         </div>
@@ -191,7 +191,7 @@ const Home = () => {
           </div>
         </div>
         <div className="flex justify-center">
-          <NavLink to={"/apply"} className="flex gap-2 items-center cursor-pointer bg-[#D93327] hover:bg-red-500 transition px-8 py-2.5 rounded-full  text-white mt-4 shadow-lg text-lg">
+          <NavLink to={"/apply"} className="flex gap-2 items-center cursor-pointer bg-[#D93327] hover:bg-red-500 transition px-8 py-2.5 rounded-lg  text-white mt-4 shadow-lg text-lg">
             <LucideIcons.PencilLine /> สมัครงาน
           </NavLink>
         </div>

@@ -13,7 +13,7 @@ const Footer = () => {
             <p className="text-white mb-4">Digital Marketing, E-commerce และคลังสินค้าฟูลฟิวเม้นทครบวงจร</p>
           </div>
           <div className="w-full md:w-1/4">
-            <h4 className="text-lg font-semibold mb-4 text-white">เมนู</h4>
+            <h4 className="text-lg font-semibold mb-4 text-[#D93327]">เมนู</h4>
             <ul className="space-y-2">
               <li>
                 <a href="#" className="text-white hover:text-[#D93327]">
@@ -34,7 +34,7 @@ const Footer = () => {
           </div>
 
           <div className="w-full md:w-1/3">
-            <h4 className="text-lg font-semibold mb-4 text-white">ช่องทางการติดต่อ</h4>
+            <h4 className="text-lg font-semibold mb-4 text-[#D93327]">ช่องทางการติดต่อ</h4>
             <div className="space-y-3">
               <div className="flex items-start">
                 <Phone size={18} className="mr-2 mt-1 text-white" />
@@ -42,7 +42,7 @@ const Footer = () => {
               </div>
               <div className="flex items-start">
                 <Mail size={18} className="mr-2 mt-1 text-white" />
-                <span className="text-white">hr.official.ganes@gmail.com</span>
+                <span className="text-white">hr.likeshop@gmail.com</span>
               </div>
               <div className="flex items-start">
                 <MapPin size={18} className="mr-2 mt-1 text-white" />
